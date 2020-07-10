@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.scanhost'
+    'scanhost',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +132,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+scanhosts = ['127.0.0.1', '172.25.254.0/24', '39.106.145.114']
+
+commands = {
+    'hostname': 'hostname',
+    'os_type': 'uname',
+    'os_distribution': 'dmidecode -s system-manufacturer',
+    'os_release': 'cat /etc/redhat-release',
+    'MAC': 'cat /sys/class/net/`[^vtlsb]`*/address',
+}
